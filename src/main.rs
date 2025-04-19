@@ -4,7 +4,9 @@ mod models;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    println!("🚀 Cat-Agent Microservice running on http://localhost:8080 🐱");
+    env_logger::init();
+
+    println!("🚀 Server running at http://127.0.0.1:8080");
 
     HttpServer::new(|| {
         App::new()
